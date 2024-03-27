@@ -1,7 +1,5 @@
 package dev.yolocat.cpptranspiler.data;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import dev.yolocat.cpptranspiler.TranspilerUtils;
 
 import java.util.ArrayList;
