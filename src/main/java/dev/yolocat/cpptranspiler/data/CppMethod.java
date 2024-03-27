@@ -37,39 +37,46 @@ public class CppMethod {
         private boolean isStatic = false;
         private boolean isAbstract = false;
         private String returnType = "";
-        private List<String> contents = new ArrayList<>();
-        private List<CppArg> args = new ArrayList<>();
+        private final List<String> contents = new ArrayList<>();
+        private final List<CppArg> args = new ArrayList<>();
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder name(String name) {
             this.name = name;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder visibility(CppVisibility visibility) {
             this.visibility = visibility;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder isStatic(boolean isStatic) {
             this.isStatic = isStatic;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder isAbstract(boolean isAbstract) {
             this.isAbstract = isAbstract;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder returnType(String returnType) {
             this.returnType = returnType;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder contents(String... contents) {
             Arrays.stream(contents).forEach(c -> this.contents.addAll(List.of(c.split("\n"))));
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder args(CppArg... args) {
             this.args.addAll(List.of(args));
             return this;

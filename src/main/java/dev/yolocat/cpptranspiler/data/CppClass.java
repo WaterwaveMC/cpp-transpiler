@@ -39,46 +39,54 @@ public class CppClass {
         public CppVisibility visibility = CppVisibility.PRIVATE;
         public boolean isAbstract = false;
         public String extendsClass = "";
-        public List<String> implementsInterfaces = new ArrayList<>();
-        public List<CppMethod> methods = new ArrayList<>();
-        public List<CppField> fields = new ArrayList<>();
-        public List<CppConstructor> constructors = new ArrayList<>();
+        public final List<String> implementsInterfaces = new ArrayList<>();
+        public final List<CppMethod> methods = new ArrayList<>();
+        public final List<CppField> fields = new ArrayList<>();
+        public final List<CppConstructor> constructors = new ArrayList<>();
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder name(String name) {
             this.name = name;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder visibility(CppVisibility visibility) {
             this.visibility = visibility;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder isAbstract(boolean isAbstract) {
             this.isAbstract = isAbstract;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder extendsClass(String extendsClass) {
             this.extendsClass = extendsClass;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder implementsInterfaces(String... implementsInterfaces) {
             this.implementsInterfaces.addAll(Arrays.asList(implementsInterfaces));
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder methods(CppMethod... methods) {
             this.methods.addAll(Arrays.asList(methods));
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder fields(CppField... fields) {
             this.fields.addAll(Arrays.asList(fields));
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder constructors(CppConstructor... constructors) {
             this.constructors.addAll(Arrays.asList(constructors));
             return this;

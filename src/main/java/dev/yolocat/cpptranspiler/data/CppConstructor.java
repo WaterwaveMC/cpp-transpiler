@@ -25,9 +25,9 @@ public class CppConstructor {
 
     public static class Builder {
 
-        public List<CppArg> args = new ArrayList<>();
+        public final List<CppArg> args = new ArrayList<>();
         public CppVisibility visibility = CppVisibility.PRIVATE;
-        public List<String> contents = new ArrayList<>();
+        public final List<String> contents = new ArrayList<>();
 
         public Builder args(CppArg... args) {
             this.args.addAll(List.of(args));

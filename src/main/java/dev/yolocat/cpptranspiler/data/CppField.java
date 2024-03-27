@@ -33,31 +33,37 @@ public class CppField {
         private boolean isFinal = false;
         private String defaultValue = "";
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder name(String name) {
             this.name = name;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder type(String type) {
             this.type = type;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder visibility(CppVisibility visibility) {
             this.visibility = visibility;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder isStatic(boolean isStatic) {
             this.isStatic = isStatic;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder isFinal(boolean isFinal) {
             this.isFinal = isFinal;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             return this;

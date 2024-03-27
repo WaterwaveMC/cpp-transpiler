@@ -27,21 +27,25 @@ public class CppArg {
         private String defaultValue = "";
         private boolean isFinal = false;
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder name(String name) {
             this.name = name;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder type(String type) {
             this.type = type;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder isFinal(boolean isFinal) {
             this.isFinal = isFinal;
             return this;

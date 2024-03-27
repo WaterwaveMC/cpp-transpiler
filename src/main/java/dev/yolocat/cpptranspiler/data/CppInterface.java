@@ -28,24 +28,28 @@ public class CppInterface {
 
         public String name = "";
         public CppVisibility visibility = CppVisibility.PRIVATE;
-        public List<String> extendsInterfaces = new ArrayList<>();
-        public List<CppMethod> methods = new ArrayList<>();
+        public final List<String> extendsInterfaces = new ArrayList<>();
+        public final List<CppMethod> methods = new ArrayList<>();
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder name(String name) {
             this.name = name;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder visibility(CppVisibility visibility) {
             this.visibility = visibility;
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder extendsInterfaces(String... extendsInterfaces) {
             this.extendsInterfaces.addAll(List.of(extendsInterfaces));
             return this;
         }
 
+        @SuppressWarnings("UnusedReturnValue")
         public Builder methods(CppMethod... methods) {
             this.methods.addAll(List.of(methods));
             return this;
