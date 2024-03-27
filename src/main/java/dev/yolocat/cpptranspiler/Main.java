@@ -22,6 +22,9 @@ public class Main {
         CppFile[] cpp = Transpiler.transpile(source);
         for (CppFile file : cpp) {
             File parent = new File(target, file.path);
+
+            // We don't care ¯\_(ツ)_/¯
+            //noinspection ResultOfMethodCallIgnored
             parent.mkdirs();
 
             File cppFile = new File(parent, file.name + ".ixx");
@@ -31,7 +34,7 @@ public class Main {
                     if(safeMode) {
                         System.out.println("Target file already exists at path: " + cppFile.getAbsolutePath());
                         System.out.println("Continuing will destroy and replace this file and all other targeted files.");
-                        System.out.println("Continue? (y/N) ");
+                        System.out.print("Continue? (y/N) ");
 
                         Scanner scanner = new Scanner(System.in);
                         String input = scanner.nextLine();
@@ -53,6 +56,9 @@ public class Main {
                     System.out.println("Could not create file " + cppFile.getAbsolutePath());
                 }
             } catch(IOException e) {
+                // TODO: Use better logging system
+
+                // noinspection CallToPrintStackTrace
                 e.printStackTrace();
                 return;
             }
