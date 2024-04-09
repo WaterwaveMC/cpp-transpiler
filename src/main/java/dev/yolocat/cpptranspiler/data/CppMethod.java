@@ -6,24 +6,19 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CppMethod {
+public class CppMethod extends CppFunction {
 
     public final String name;
-    public final CppVisibility visibility;
     public final boolean isStatic;
     public final boolean isAbstract;
     public final String returnType;
-    public final String[] contents;
-    public final CppArg[] args;
 
-    public CppMethod(String name, CppVisibility visibility, boolean isStatic, boolean isAbstract, String returnType, String[] contents, CppArg[] args) {
+    public CppMethod(CppVisibility visibility, String javaSource, String[] contents, CppArg[] args, String name, boolean isStatic, boolean isAbstract, String returnType) {
+        super(visibility, javaSource, contents, args);
         this.name = name;
-        this.visibility = visibility;
         this.isStatic = isStatic;
         this.isAbstract = isAbstract;
         this.returnType = returnType;
-        this.contents = contents;
-        this.args = args;
     }
 
     @Override
@@ -37,6 +32,7 @@ public class CppMethod {
         private boolean isStatic = false;
         private boolean isAbstract = false;
         private String returnType = "";
+        private String javaSource = "";
         private final List<String> contents = new ArrayList<>();
         private final List<CppArg> args = new ArrayList<>();
 
@@ -71,6 +67,12 @@ public class CppMethod {
         }
 
         @SuppressWarnings("UnusedReturnValue")
+        public Builder javaSource(String javaSource) {
+            this.javaSource = javaSource;
+            return this;
+        }
+
+        @SuppressWarnings("UnusedReturnValue")
         public Builder contents(String... contents) {
             Arrays.stream(contents).forEach(c -> this.contents.addAll(List.of(c.split("\n"))));
             return this;
@@ -83,7 +85,7 @@ public class CppMethod {
         }
 
         public CppMethod build() {
-            return new CppMethod(name, visibility, isStatic, isAbstract, returnType, contents.toArray(new String[0]), args.toArray(new CppArg[0]));
+            return new CppMethod(visibility, javaSource, contents.toArray(new String[0]), args.toArray(new CppArg[0]), name, isStatic, isAbstract, returnType);
         }
     }
 

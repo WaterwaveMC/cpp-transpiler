@@ -11,14 +11,12 @@ public class CppFile {
     public final String name;
     public final String[] imports;
     public final CppClass[] classes;
-    public final CppInterface[] interfaces;
 
-    public CppFile(String path, String name, String[] imports, CppClass[] classes, CppInterface[] interfaces) {
+    public CppFile(String path, String name, String[] imports, CppClass[] classes) {
         this.path = path;
         this.name = name;
         this.imports = imports;
         this.classes = classes;
-        this.interfaces = interfaces;
     }
 
     @Override
@@ -32,7 +30,6 @@ public class CppFile {
         private String name = "";
         private final List<String> imports = new ArrayList<>();
         private final List<CppClass> classes = new ArrayList<>();
-        private final List<CppInterface> interfaces = new ArrayList<>();
 
         @SuppressWarnings("UnusedReturnValue")
         public Builder path(String path) {
@@ -58,14 +55,8 @@ public class CppFile {
             return this;
         }
 
-        @SuppressWarnings("UnusedReturnValue")
-        public Builder interfaces(CppInterface... interfaces) {
-            this.interfaces.addAll(List.of(interfaces));
-            return this;
-        }
-
         public CppFile build() {
-            return new CppFile(path, name, imports.toArray(new String[0]), classes.toArray(new CppClass[0]), interfaces.toArray(new CppInterface[0]));
+            return new CppFile(path, name, imports.toArray(new String[0]), classes.toArray(new CppClass[0]));
         }
 
     }

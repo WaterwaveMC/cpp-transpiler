@@ -22,7 +22,7 @@ public class TranspilerUtils {
         File[] files = recursiveListFiles(sourceDir);
         if(files == null) return List.of(new CompilationUnitTree[0]);
 
-        System.out.println(Arrays.toString(files));
+        if(Transpiler.debug) System.out.println(Arrays.toString(files));
 
         File[] javaFiles = Arrays.stream(files).filter(f -> f.getName().endsWith(".java")).toList().toArray(new File[0]);
 
